@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # writer.sh writefile writestr
 
 if [[ $# != 2 ]]; then

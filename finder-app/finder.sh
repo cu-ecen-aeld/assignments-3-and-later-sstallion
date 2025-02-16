@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # finder.sh filesdir searchstr
 
 if [[ $# != 2 ]]; then
