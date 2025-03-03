@@ -90,7 +90,7 @@ void term(int signum)
 
 void usage(void)
 {
-	fprintf(stderr, "Usage: %s [-d]", program);
+	fprintf(stderr, "Usage: %s [-d]\n", program);
 	exit(EXIT_FAILURE);
 }
 
@@ -129,7 +129,7 @@ int main(int argc, char *argv[])
 	if (daemon(0, 0) < 0)
 		fatal(NULL);
 
-	err = listen(sockfd, 0);
+	err = listen(sockfd, 8);
 	if (err < 0)
 		fatal(NULL);
 
@@ -156,7 +156,7 @@ int main(int argc, char *argv[])
 			if (n < 0)
 				fatal(NULL);
 
-			if (memrchr(buf, '\n', sizeof(buf)) != NULL)
+			if (memchr(buf, '\n', sizeof(buf)) != NULL)
 				break;
 		}
 

@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case "$1" in
+start)
+	echo "Starting aesdsocket server"
+	start-stop-daemon -n aesdsocket -S -- /usr/bin/aesdsocket -d
+	;;
+
+stop)
+	echo "Stopping aesdsocket server"
+	start-stop-daemon -n aesdsocket -K
+	;;
+*)
+	echo "Usage: $(basename $0) {start|stop}"
+	exit 1
+esac
+exit 0
